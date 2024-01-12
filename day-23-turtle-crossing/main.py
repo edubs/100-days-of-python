@@ -11,15 +11,17 @@ s.tracer(0)
 p = Player()
 s.listen()
 s.onkey(p.move_up, "Up")
-c = CarManager()
+cm = CarManager()
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(0.5)
     s.update()
-    c.drive()
+    cm.create_car()
+    cm.drive()
 
     # detect crossing the finish line
     if p.ycor() > 280:
         p.level_up()
+        cm.speed_up()
 
 s.exitonclick()
