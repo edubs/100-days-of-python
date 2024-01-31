@@ -16,8 +16,8 @@ corrects = 0
 list_correct = []
 
 while game_is_on:
-    answer_state = screen.textinput(title=f"{corrects}/50 States Correct", prompt="What's another state's name?")
-    answer_state = answer_state.title()
+    answer_state = screen.textinput(title=f"{corrects}/50 States Correct",
+                                    prompt="What's another state's name?").title()  # saves doing it on another line
 
     if answer_state in list_states:
         t = turtle.Turtle()
