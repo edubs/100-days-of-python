@@ -19,6 +19,8 @@ while game_is_on:
     answer_state = screen.textinput(title=f"{corrects}/50 States Correct",
                                     prompt="What's another state's name?").title()  # saves doing it on another line
 
+    if answer_state == "Exit":
+        break
     if answer_state in list_states:
         t = turtle.Turtle()
         t.hideturtle()
@@ -35,4 +37,5 @@ while game_is_on:
             t.goto(0, 0)
             t.write("YOU WIN!", font=('Arial', 40, 'normal'))
 
-screen.exitonclick()
+df = pandas.DataFrame(list_states)
+df.to_csv("./missed_states.csv")
