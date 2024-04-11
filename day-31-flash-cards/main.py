@@ -25,7 +25,7 @@ def generate_word():
     window.after_cancel(flip_timer)
     current_card = random.choice(to_learn)
     canvas.itemconfig(card_title, text="German", fill="black")
-    canvas.itemconfig(card_word, text=current_card["German"])
+    canvas.itemconfig(card_word, text=current_card["German"], fill="black")
     canvas.itemconfig(card_background, image=front_image)
     flip_timer = window.after(3000, func=flip_card)
 
