@@ -8,6 +8,8 @@ parameters = {
     "amount": AMOUNT,
     "type": TYPE,
     "difficulty": DIFFICULTY,
+    # category doesn't seem to work for me
+    # "category": 18,
 }
 
 response = requests.get("https://opentdb.com/api.php", params=parameters)
