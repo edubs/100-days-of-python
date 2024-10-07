@@ -1,8 +1,6 @@
 import os
 from datetime import datetime
 
-import requests
-
 USERNAME = "erik-pixela"
 TOKEN = os.environ['pixelaToken']
 print(TOKEN)
@@ -39,12 +37,12 @@ print(today)
 # create pixel entry
 graph1_config = {
     "date": today.strftime("%Y%m%d"),
-    "quantity": "6.2",
+    "quantity": input("How many KM did you cycle today?"),
 }
 
-pin_graph = {
-    "pinnedGraphID": "graph1"
-}
+# pin_graph = {
+#     "pinnedGraphID": "graph1"
+# }
 
 # response = requests.post(url=pixela_endpoint, json=user_params)
 # "Success. Let's visit https://pixe.la/@erik-pixela , it is your profile page!"
@@ -55,5 +53,5 @@ pin_graph = {
 # response = requests.post(url=graph1_endpoint, json=graph1_config, headers=headers)
 
 # set pinned graph
-response = requests.put(url=user_endpoint, json=pin_graph, headers=headers)
-print(response)
+# response = requests.put(url=user_endpoint, json=pin_graph, headers=headers)
+# print(response)
